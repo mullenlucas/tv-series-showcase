@@ -1,0 +1,3 @@
+Set up Jest with ES6
+
+https://github.com/microverseinc/curriculum-transversal-skills/blob/main/testing/lesson_more_about_unit_tests_in_js.md
