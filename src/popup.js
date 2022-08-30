@@ -9,23 +9,11 @@ const fetchShows = async () => {
   data = data[0]
   return data
 };
+fetchShows()
+let comment = document.querySelector('.comment-btn')
+comment.innerHTML = ` 
 
-let container = document.querySelector('.container-pop')
-container.innerHTML = ` 
-
-        <div class="popup">
-        <p>${data.summary}</p>
-        <p>comment</p>
-        <p>input</p>
-        <form>
-        <input type="text" name="username" placeholder="name" id="">
-        <input type="text" name="comment" placeholder="comment" id="">
-        <button>Submit</button>
-        </form>
-        </div>
 `
-
-import './style.css';
 
 const fetchid = async () => {
   let response = await fetch('https://api.tvmaze.com/shows')
@@ -38,7 +26,7 @@ const fetchid = async () => {
 fetchid()
 // https://pokeapi.co/api/v2/pokemon
 
-let popup = document.querySelector('.pop')
+let popup = document.querySelector('.modal')
 let container = document.querySelector('.container-pop')
   popup.addEventListener('click', () => {
     container.classList.toggle('hide')
