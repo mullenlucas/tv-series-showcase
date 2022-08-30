@@ -27,9 +27,14 @@ header nav ul {
 
 #img-logo {
   background-image: url(./imgs/as-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 60px;
   width: 60px;
 }
+
+
 
 footer {
   background-color: bisque;
@@ -43,4 +48,23 @@ footer {
   gap: 12%;
   border: 2px solid;
   align-items: center;
+}
+main {
+  height: 500px;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.popup {
+  position: fixed;
+  background-color: aqua;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
 }
