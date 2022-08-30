@@ -1,0 +1,1 @@
+// functions to generate HTML of cards
