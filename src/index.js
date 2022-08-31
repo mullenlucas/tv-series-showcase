@@ -4,7 +4,7 @@ import './popup.css';
 import './cardStyles.css';
 import Series from './modules/Series';
 import createCard from './cards.js';
-import { openModal } from './popup';
+import openModal  from './popup';
 
 // Initialize Series Class
 const seriesCl = new Series();
@@ -42,6 +42,7 @@ const displayPop = async() => {
         let id = Number(e.target.id.split('d')[1])
         modal.classList.toggle('hide')       
        openModal(id)
+       
       })
     })
 
