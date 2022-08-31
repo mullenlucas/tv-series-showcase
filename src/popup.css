@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;1,200&family=Roboto:ital,wght@0,100;0,300;1,300;1,700&display=swap');
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.popup {
+  position: fixed;
+  background-color: #eee;
+  top: 7%;
+  right: 10%;
+  bottom: 7%;
+  left: 10%;
+  overflow-y: scroll;
+}
+
+.close-popup {
+  color: gray;
+  font-size: 40px;
+  text-align: end;
+
+  /* position: absolute;
+    top: 10px;
+    right: 10px; */
+  cursor: pointer;
+  margin: 0.15rem 0.5rem;
+}
+
+.img-container {
+  height: auto;
+}
+
+.series-img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+.series-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 1rem;
+  font-family: var(--font-roboto);
+}
+
+.series-info p:nth-child(even) {
+  display: flex;
+  justify-content: end;
+}
+
+.summary {
+  text-align: center;
+  font-family: var(--font-roboto);
+}
+
+.series-desc {
+  margin: 1rem;
+  text-align: center;
+  font-family: var(--font-poppins);
+}
+
+.genres,
+.movie-link {
+  text-align: center;
+  margin: 0.5rem;
+  font-family: var(--font-roboto);
+}
+
+@media screen and (min-width: 768px) {
+  .popup {
+    right: 25%;
+    left: 25%;
+  }
+
+  .series-img {
+    height: auto;
+  }
+
+  .img-container {
+    height: auto;
+  }
+}
