@@ -7,8 +7,8 @@ class Series {
   }
 
   // create a new Serie and save it in the collection using the Serie class declared above
-  newSerie(name, ind, likes, comments) {
-    const t = new Serie(name, ind, likes, comments);
+  newSerie(index, name, img, desc) {
+    const t = new Serie(index, name, img, desc);
     this.Series.push(t);
     return t;
   }
