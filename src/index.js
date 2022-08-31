@@ -1,5 +1,6 @@
 import './style.css';
 import './popup.css';
+import './comment.css';
 import './cardStyles.css';
 import Series from './modules/Series.js';
 import createCard from './cards.js';
@@ -36,7 +37,7 @@ const displayPop = async () => {
   const modal = document.querySelector('.modal');
   popup.forEach((el) => {
     el.addEventListener('click', (e) => {
-      const id = Number(e.target.id.split('d')[1]);
+      const id = Number(e.target.id);
       modal.classList.toggle('hide');
       openModal(id);
     });

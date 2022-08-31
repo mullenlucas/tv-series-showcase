@@ -29,7 +29,7 @@ const createCard = (id, txt, imgsrc) => {
   cardDiv.appendChild(likesDiv);
   const commentBtn = document.createElement('button');
   commentBtn.setAttribute('class', 'comment-btn');
-  commentBtn.setAttribute('id', `btn-id${id}`);
+  commentBtn.setAttribute('id', `${id}`);
   commentBtn.innerText = 'Comments';
   cardDiv.appendChild(commentBtn);
   mainSec.appendChild(cardDiv);
