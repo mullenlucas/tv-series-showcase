@@ -1,34 +1,27 @@
-let baseUrl = 'https://api.tvmaze.com/shows'
-let data;
+const baseUrl = 'https://api.tvmaze.com/shows';
+
 const fetchShows = async () => {
-  let response = await fetch(baseUrl)
-  console.log(await response.status)
-  let data = await response.json()
-  console.log(data)
-  console.log(data.splice(141))
-  data = data[0]
-  return data
+  const response = await fetch(baseUrl);
+  const data = await response.json();
+  return data;
 };
-fetchShows()
-let comment = document.querySelector('.comment-btn')
+fetchShows();
+const comment = document.querySelector('.comment-btn');
 comment.innerHTML = ` 
 
-`
+`;
 
 const fetchid = async () => {
-  let response = await fetch('https://api.tvmaze.com/shows')
-  console.log(await response.status)
-  let data = await response.json()
-  console.log(data)
-  console.log(data.splice(141))
+  const response = await fetch('https://api.tvmaze.com/shows');
+  const data = await response.json();
+  return data;
 };
 
-fetchid()
+fetchid();
 // https://pokeapi.co/api/v2/pokemon
 
-let popup = document.querySelector('.modal')
-let container = document.querySelector('.container-pop')
-  popup.addEventListener('click', () => {
-    container.classList.toggle('hide')
-  }) 
-
+const popup = document.querySelector('.modal');
+const container = document.querySelector('.container-pop');
+popup.addEventListener('click', () => {
+  container.classList.toggle('hide');
+});

@@ -34,8 +34,6 @@ header nav ul {
   width: 60px;
 }
 
-
-
 footer {
   background-color: bisque;
   font-family: var(--font-poppins);
@@ -49,6 +47,7 @@ footer {
   border: 2px solid;
   align-items: center;
 }
+
 main {
   height: 500px;
 }
@@ -56,6 +55,7 @@ main {
 .hide {
   display: none;
 }
+
 .show {
   display: block;
 }
