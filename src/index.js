@@ -16,8 +16,6 @@ const fetchShows = async () => {
  
   data.splice(141).forEach( (el, i) => {
     seriesCl.allSeries.push(el)
-    // console.log(seriesCl.allSeries[i])
-    // console.log(seriesCl.allSeries[i].image.medium)
     createCard(i, seriesCl.allSeries[i].name, seriesCl.allSeries[i].image.medium)
   })
 };
