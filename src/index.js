@@ -1,15 +1,14 @@
-/* eslint-disable */
 import './style.css';
 import './popup.css';
 import './cardStyles.css';
-import Series from './modules/Series';
+import Series from './modules/Series.js';
 import createCard from './cards.js';
 import openModal  from './popup';
 
 // Initialize Series Class
 const seriesCl = new Series();
 
-let baseUrl = 'https://api.tvmaze.com/shows'
+const baseUrl = 'https://api.tvmaze.com/shows';
 
 const fetchShows = async () => {
   let response = await fetch(baseUrl)
@@ -23,7 +22,7 @@ const fetchShows = async () => {
   })
 };
 
-fetchShows()
+fetchShows();
 
 // const fetchid = async () => {
 //   let response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
