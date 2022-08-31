@@ -37,7 +37,7 @@ const openModal = async (id) => {
       <h3 class="summary">Synopsis</h3>
       <p class="series-desc">${shows[id].summary.replaceAll(/<b>|<\/b>|<p>|<\/p>/g, '')}</p>
       <div class="comment-section">
-      <h4 class="center-comment">Comments (2)</h4>
+      <h4 class="center-comment">Comments (${comments.length ? comments.length : 0})</h4>
       <div class="comment-list">
       ${comments.length >= 1
     ? comments.map((comment) => `<p>${comment.creation_date} ${comment.username}: ${comment.comment} </p>`).join('')
