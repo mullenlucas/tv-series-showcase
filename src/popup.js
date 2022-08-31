@@ -7,12 +7,10 @@ const fetchShow = async () => {
 };
 
 const fetchComment = async (id) => {
-  let response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/comments/?item_id=${id}`)
-    let data = await response.json()
-    return data
-
-}
-
+  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/comments/?item_id=${id}`);
+  const data = await response.json();
+  return data;
+};
 
 const openModal = async (id) => {
   const shows = await fetchShow();
@@ -41,14 +39,15 @@ const openModal = async (id) => {
       <div class="comment-section">
       <h4 class="center-comment">Comments (2)</h4>
       <div class="comment-list">
-      ${comments.length >= 1  ?  
-     comments.map((comment) =>`<p>${comment.creation_date} ${comment.username}: ${comment.comment} </p>`).join('') 
-     : `<p>No available comment</p>`}
+      ${comments.length >= 1
+    ? comments.map((comment) => `<p>${comment.creation_date} ${comment.username}: ${comment.comment} </p>`).join('')
+    : '<p>No available comment</p>'}
     </div>
       <h4 class="center-comment">Add a comment</h4>
       <form class="form-comment">
       <input type="text" name="name" class="username" placeholder="add your name">
       <textarea name="comment" id="" rows="5" placeholder="add your review"></textarea>
+      <button class="add-comment">submit comment</button>
       </form>
       </div>
 </div>
@@ -62,5 +61,3 @@ const openModal = async (id) => {
 };
 
 export default openModal;
-
-    //  ${comments ? comments.map((comment) =>`<p>${comment.creation_date} ${comment.username}: ${comment.comment} </p>`).join('') : '<p>No comment</p>'} 
