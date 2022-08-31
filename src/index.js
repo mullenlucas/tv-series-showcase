@@ -1,7 +1,9 @@
 import './style.css';
+import './popup.css';
 import './cardStyles.css';
 import Series from './modules/Series.js';
 import createCard from './cards.js';
+import openModal from './popup.js';
 
 // Initialize Series Class
 const seriesCl = new Series();
@@ -27,3 +29,18 @@ fetchShows();
 //   console.log(response)
 // };
 // fetchid()
+
+const displayPop = async () => {
+  await fetchShows();
+  const popup = document.querySelectorAll('.comment-btn');
+  const modal = document.querySelector('.modal');
+  popup.forEach((el) => {
+    el.addEventListener('click', (e) => {
+      const id = Number(e.target.id.split('d')[1]);
+      modal.classList.toggle('hide');
+      openModal(id);
+    });
+  });
+};
+
+displayPop();
