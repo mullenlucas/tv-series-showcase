@@ -1,7 +1,9 @@
 /* eslint-disable */
 import './style.css';
+import './popup.css';
 import './cardStyles.css';
 import Series from './modules/Series';
+import { openModal } from './popup';
 
 const seriesCl = new Series();
 
@@ -69,3 +71,39 @@ const fetchShows = async () => {
 
 // fetchShows()
 console.log(seriesCl.allSeries)
+
+
+// fetchShow()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Event Listener for the popup and comment 
+let popup = document.querySelectorAll('.comment-btn')
+let modal = document.querySelector('.modal')
+
+popup.forEach(el => {
+    el.addEventListener('click', (e) => {
+      let id = e.target.id.split('d')[1] - 1
+      modal.classList.toggle('hide')       
+     openModal(id)
+    })
+  })

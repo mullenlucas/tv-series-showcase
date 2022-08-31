@@ -49,22 +49,3 @@ footer {
   border: 2px solid;
   align-items: center;
 }
-main {
-  height: 500px;
-}
-
-.hide {
-  display: none;
-}
-.show {
-  display: block;
-}
-
-.popup {
-  position: fixed;
-  background-color: aqua;
-  top: 10%;
-  right: 10%;
-  bottom: 10%;
-  left: 10%;
-}
