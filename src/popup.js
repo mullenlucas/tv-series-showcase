@@ -26,11 +26,17 @@ export const addNewComment = async (id, name, comment) => {
   });
   return response.status;
 };
-// fetchid()
+
+export const commentCounter = async (id) => {
+  const comments = await fetchComment(id);
+  const numberOfComment = comments.length;
+  return numberOfComment;
+};
 
 const openModal = async (id) => {
   const shows = await fetchShow();
   const comments = await fetchComment(id);
+  const commentCount = await commentCounter(id);
   const modal = document.querySelector('.modal');
   modal.innerHTML = ` 
   <div class="popup">
@@ -53,7 +59,7 @@ const openModal = async (id) => {
       <h3 class="summary">Synopsis</h3>
       <p class="series-desc">${shows[id].summary.replaceAll(/<b>|<\/b>|<p>|<\/p>/g, '')}</p>
       <div class="comment-section">
-      <h4 class="center-comment">Comments (${comments.length ? comments.length : 0})</h4>
+      <h4 class="center-comment">Comments (${commentCount || 0})</h4>
       <div class="comment-list">
       ${comments.length >= 1
     ? comments.map((comment) => `<p>${comment.creation_date} ${comment.username}: ${comment.comment} </p>`).join('')
