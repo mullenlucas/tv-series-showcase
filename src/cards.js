@@ -22,21 +22,24 @@ const updateLikes = async (id) => {
   numLikes.innerText = `${n} likes`;
 };
 
-let userLikesList = JSON.parse(localStorage.userLikes);
+let userLikesList = [];
+if (localStorage.length !== 0) {
+  userLikesList = JSON.parse(localStorage.userLikes);
+}
+
 const giveLike = async (id) => {
   await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/likes/', {
     method: 'POST',
     body: JSON.stringify({
-      item_id: id
+      item_id: id,
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
-  userLikesList.push(id)
+  userLikesList.push(id);
   localStorage.setItem('userLikes', JSON.stringify(userLikesList));
-}
-
+};
 
 const mainSec = document.getElementById('main-sec-id');
 const createCard = (id, txt, imgsrc) => {
@@ -55,9 +58,8 @@ const createCard = (id, txt, imgsrc) => {
   subt.setAttribute('class', 'subtitle');
   subt.innerText = `${txt}`;
 
-  
   const heartIcon = document.createElement('i');
-  if(userLikesList.includes(id)){
+  if (userLikesList.includes(id)) {
     heartIcon.setAttribute('class', 'fa-solid fa-heart');
   } else {
     heartIcon.setAttribute('class', 'far fa-heart');
@@ -68,9 +70,9 @@ const createCard = (id, txt, imgsrc) => {
   cardDiv.appendChild(subtDiv);
   heartIcon.addEventListener('click', () => {
     heartIcon.setAttribute('class', 'fa-solid fa-heart');
-    giveLike(id)
-    updateLikes(id)
-  })
+    giveLike(id);
+    updateLikes(id);
+  });
 
   const likesDiv = document.createElement('div');
   likesDiv.setAttribute('class', 'likes');
