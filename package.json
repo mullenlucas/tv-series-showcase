@@ -24,7 +24,8 @@
   "homepage": "https://github.com/mullenlucas/webpack-template#readme",
   "dependencies": {
     "jsdom": "^20.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.2.10"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
