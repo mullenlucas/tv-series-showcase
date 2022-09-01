@@ -1,10 +1,14 @@
-import { commentCounter } from "./popup"
-const add = (num1, num2) => {
-return num1 + num2
-}
+import commentCounter from "./mocks/commentCounter.js"
 
-test('add two numbers', () => {
-    const comment = ['comment1', 'comment2']
-    commentCounter(1)
-    expect(add(2,2)).toBe(4)
-}) 
+describe('test count of comments made on a particular series', () => {
+    test('comments array contains two comments', () => {
+        const comment = ['comment1', 'comment2']
+        expect(commentCounter(comment)).toBe(2)
+    }) 
+
+    test('comments array contains no comments', () => {
+        const comment = []
+        expect(commentCounter(comment)).toBe(0)
+    }) 
+
+})
