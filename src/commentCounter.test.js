@@ -7,7 +7,7 @@ describe('test count of comments made on a particular series', () => {
       { comment: 'a good series to watch', creation_date: '2022-08-31', username: 'paul' },
       { comment: 'nice series all round', creation_date: '2022-08-31', username: 'messi' },
     ];
-    expect(commentCounter(comment)).toBe(2);
+    expect(commentCounter(comment)).toBe(3);
   });
 
   test('comments array contains no comments', () => {
