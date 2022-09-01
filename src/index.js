@@ -20,7 +20,7 @@ const fetchShows = async () => {
   });
 };
 
-const populateShows = async() => {
+const populateShows = async () => {
   await fetchShows()
   seriesCl.allSeries.forEach( (el, i) => {
     createCard(i, el.name, el.image.medium)
