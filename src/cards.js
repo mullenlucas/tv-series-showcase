@@ -23,7 +23,7 @@ const updateLikes = async (id) => {
 };
 
 let userLikesList = [];
-if (localStorage.length !== 0) {
+if (localStorage.getItem('userLikes')) {
   userLikesList = JSON.parse(localStorage.userLikes);
 }
 
