@@ -1,10 +1,10 @@
 import './style.css';
 import './popup.css';
-import './comment.css';
 import './cardStyles.css';
+import './comment.css';
 import Series from './modules/Series.js';
 import createCard from './cards.js';
-import openModal from './popup.js';
+import openModal, { addNewComment, fetchComment } from './popup.js';
 
 // Initialize Series Class
 const seriesCl = new Series();
@@ -41,10 +41,24 @@ const displayPop = async () => {
   const popup = document.querySelectorAll('.comment-btn');
   const modal = document.querySelector('.modal');
   popup.forEach((el) => {
-    el.addEventListener('click', (e) => {
+    el.addEventListener('click', async (e) => {
       const id = Number(e.target.id);
       modal.classList.toggle('hide');
-      openModal(id);
+      await openModal(id);
+
+      const form = document.querySelector('form');
+      const addButton = document.querySelector('.add-comment');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = Number(addButton.id);
+        const comment = form.comment.value;
+        const user = form.name.value;
+        await addNewComment(id, user, comment);
+        form.name.value = '';
+        form.comment.value = '';
+        await fetchComment(id);
+        await openModal(id);
+      });
     });
   });
 };
