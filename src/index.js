@@ -21,12 +21,12 @@ const fetchShows = async () => {
 };
 
 const populateShows = async () => {
-  await fetchShows()
-  seriesCl.allSeries.forEach( (el, i) => {
-    createCard(i, el.name, el.image.medium)
-  })
-}
-populateShows()
+  await fetchShows();
+  seriesCl.allSeries.forEach((el, i) => {
+    createCard(i, el.name, el.image.medium);
+  });
+};
+populateShows();
 
 // const fetchid = async () => {
 //   let response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {

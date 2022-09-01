@@ -1,6 +1,6 @@
 const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/likes/';
 
-let likesArr = []
+const likesArr = [];
 const fetchLikes = async () => {
   const response = await fetch(likesUrl);
   const data = await response.json();
@@ -11,20 +11,19 @@ const fetchLikes = async () => {
 };
 
 const updateLikes = async (id) => {
-  await fetchLikes()
+  await fetchLikes();
   const numLikes = document.getElementById(`numlike${id}`);
   let n = 0;
-  likesArr.forEach( (l) => {
-    if (l.item_id === id){
-      n = l.likes
+  likesArr.forEach((l) => {
+    if (l.item_id === id) {
+      n = l.likes;
     }
-  })
+  });
   numLikes.innerText = `${n} likes`;
-}
+};
 
 const mainSec = document.getElementById('main-sec-id');
 const createCard = (id, txt, imgsrc) => {
-
   const cardDiv = document.createElement('div');
   cardDiv.setAttribute('id', `card-id${id}`);
   cardDiv.setAttribute('class', 'card');
@@ -49,8 +48,8 @@ const createCard = (id, txt, imgsrc) => {
   const likesDiv = document.createElement('div');
   likesDiv.setAttribute('class', 'likes');
   const numLikes = document.createElement('h5');
-  numLikes.setAttribute('id', `numlike${id}`)
-  updateLikes(id)
+  numLikes.setAttribute('id', `numlike${id}`);
+  updateLikes(id);
   likesDiv.appendChild(numLikes);
   cardDiv.appendChild(likesDiv);
   const commentBtn = document.createElement('button');
