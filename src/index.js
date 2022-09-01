@@ -60,6 +60,7 @@ const displayPop = async () => {
         form.comment.value = ''
         await fetchComment(id)
         await openModal(id)
+
       })      
     });
   });

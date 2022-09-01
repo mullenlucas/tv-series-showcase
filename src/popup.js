@@ -3,6 +3,7 @@ const fetchShow = async () => {
   const response = await fetch(baseUl);
   let data = await response.json();
   data = data.splice(141);
+  console.log(data)
   return data;
 };
 
@@ -71,12 +72,10 @@ const openModal = async (id) => {
       `;
 
       const close = document.querySelector('.close-popup');
-      console.log(close)
       close.addEventListener('click', () => {
-      const modal = document.querySelector('.modal');
-      modal.classList.toggle('hide');
-      modal.innerHTML = '';
-
+        const modal = document.querySelector('.modal');
+        modal.classList.toggle('hide');
+        modal.innerHTML = '';
   });
 
 };
