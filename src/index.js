@@ -28,10 +28,8 @@ const populateShows = async () => {
   seriesCl.allSeries.forEach((el, i) => {
     createCard(i, el.name, el.image.medium);
   });
-  const navUl = document.getElementById('nav-ul');
-  const itemNums = document.createElement('li');
-  itemNums.innerText = seriesCl.allSeries.length;
-  navUl.appendChild(itemNums);
+  const atvs = document.getElementById('atvs');
+  atvs.innerText = `Awesome TV-Series(${seriesCl.allSeries.length})`;
 };
 populateShows();
 
