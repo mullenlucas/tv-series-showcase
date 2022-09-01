@@ -3,31 +3,29 @@ const fetchShow = async () => {
   const response = await fetch(baseUl);
   let data = await response.json();
   data = data.splice(141);
-  console.log(data)
   return data;
 };
 
 export const fetchComment = async (id) => {
   const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/comments/?item_id=${id}`);
   const data = await response.json();
-  console.log(data)
   return data;
 };
 
 export const addNewComment = async (id, name, comment) => {
-  let response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/comments/', {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/comments/', {
     method: 'POST',
     body: JSON.stringify({
-    item_id: id,
-    username: name,
-    comment: comment
+      item_id: id,
+      username: name,
+      comment,
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
-console.log(await response.status)
-}
+  return response.status;
+};
 // fetchid()
 
 const openModal = async (id) => {
@@ -71,13 +69,12 @@ const openModal = async (id) => {
 </div>
       `;
 
-      const close = document.querySelector('.close-popup');
-      close.addEventListener('click', () => {
-        const modal = document.querySelector('.modal');
-        modal.classList.toggle('hide');
-        modal.innerHTML = '';
+  const close = document.querySelector('.close-popup');
+  close.addEventListener('click', () => {
+    const modal = document.querySelector('.modal');
+    modal.classList.toggle('hide');
+    modal.innerHTML = '';
   });
-
 };
 
 export default openModal;
