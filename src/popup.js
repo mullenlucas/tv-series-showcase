@@ -6,13 +6,14 @@ const fetchShow = async () => {
   return data;
 };
 
-const fetchComment = async (id) => {
+export const fetchComment = async (id) => {
   const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/comments/?item_id=${id}`);
   const data = await response.json();
+  console.log(data)
   return data;
 };
 
-const addNewComment = async (id, name, comment) => {
+export const addNewComment = async (id, name, comment) => {
   let response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/comments/', {
     method: 'POST',
     body: JSON.stringify({
@@ -68,25 +69,16 @@ const openModal = async (id) => {
       </div>
 </div>
       `;
-  const close = document.querySelector('.close-popup');
-  close.addEventListener('click', () => {
-    const modal = document.querySelector('.modal');
-    modal.classList.toggle('hide');
-    modal.innerHTML = '';
+
+      const close = document.querySelector('.close-popup');
+      console.log(close)
+      close.addEventListener('click', () => {
+      const modal = document.querySelector('.modal');
+      modal.classList.toggle('hide');
+      modal.innerHTML = '';
+
   });
 
-  const form = document.querySelector('form')
-  const addButton = document.querySelector('.add-comment')
-  form.addEventListener('submit', async (e) => {
-    let id = Number(addButton.id)
-    e.preventDefault()
-    let comment = form.comment.value
-    let user = form.name.value
-    await addNewComment(id, user, comment)
-    form.name.value = ''
-    form.comment.value = ''
-    await fetchComment()
-  })
 };
 
 export default openModal;

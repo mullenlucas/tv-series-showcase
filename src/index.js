@@ -1,10 +1,10 @@
 import './style.css';
 import './popup.css';
-import './comment.css';
 import './cardStyles.css';
+import './comment.css'
 import Series from './modules/Series.js';
 import createCard from './cards.js';
-import openModal from './popup.js';
+import openModal, { addNewComment, fetchComment } from './popup.js';
 
 // Initialize Series Class
 const seriesCl = new Series();
@@ -14,7 +14,7 @@ const baseUrl = 'https://api.tvmaze.com/shows';
 const fetchShows = async () => {
   const response = await fetch(baseUrl);
   const data = await response.json();
-
+  
   data.splice(141).forEach((el, i) => {
     seriesCl.allSeries.push(el);
     createCard(i, seriesCl.allSeries[i].name, seriesCl.allSeries[i].image.medium);
@@ -36,10 +36,26 @@ const displayPop = async () => {
   const popup = document.querySelectorAll('.comment-btn');
   const modal = document.querySelector('.modal');
   popup.forEach((el) => {
-    el.addEventListener('click', (e) => {
+    el.addEventListener('click', async(e) => {
       const id = Number(e.target.id);
+      console.log(id)
       modal.classList.toggle('hide');
-      openModal(id);
+      await openModal(id);
+      
+      const form = document.querySelector('form')
+      const addButton = document.querySelector('.add-comment')
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        let id = Number(addButton.id)
+        let comment = form.comment.value
+        let user = form.name.value
+        await addNewComment(id, user, comment)
+        console.log(comment, user)
+        form.name.value = ''
+        form.comment.value = ''
+        await fetchComment(id)
+        await openModal(id)
+      })      
     });
   });
 };
