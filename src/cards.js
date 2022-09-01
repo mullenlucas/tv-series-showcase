@@ -68,17 +68,20 @@ const createCard = (id, txt, imgsrc) => {
   subtDiv.appendChild(subt);
   subtDiv.appendChild(heartIcon);
   cardDiv.appendChild(subtDiv);
-  heartIcon.addEventListener('click', () => {
-    heartIcon.setAttribute('class', 'fa-solid fa-heart');
-    giveLike(id);
-    updateLikes(id);
-  });
 
   const likesDiv = document.createElement('div');
   likesDiv.setAttribute('class', 'likes');
   const numLikes = document.createElement('h5');
   numLikes.setAttribute('id', `numlike${id}`);
+
   updateLikes(id);
+  heartIcon.addEventListener('click', () => {
+    heartIcon.setAttribute('class', 'fa-solid fa-heart');
+    giveLike(id);
+    const getN = numLikes.innerText;
+    const thenum = getN.match(/\d+/)[0];
+    numLikes.innerText = `${Number(thenum) + 1} likes`;
+  });
   likesDiv.appendChild(numLikes);
   cardDiv.appendChild(likesDiv);
   const commentBtn = document.createElement('button');
