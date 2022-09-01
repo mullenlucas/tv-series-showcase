@@ -11,20 +11,25 @@ const seriesCl = new Series();
 
 const baseUrl = 'https://api.tvmaze.com/shows';
 
+let dat;
 const fetchShows = async () => {
   const response = await fetch(baseUrl);
   const data = await response.json();
 
-  data.splice(141).forEach((el) => {
-    seriesCl.allSeries.push(el);
-  });
+  dat = data;
 };
 
 const populateShows = async () => {
   await fetchShows();
+
+  dat.splice(141).forEach((el) => {
+    seriesCl.allSeries.push(el);
+  });
   seriesCl.allSeries.forEach((el, i) => {
     createCard(i, el.name, el.image.medium);
   });
+  const atvs = document.getElementById('atvs');
+  atvs.innerText = `Awesome TV-Series(${seriesCl.allSeries.length})`;
 };
 populateShows();
 
