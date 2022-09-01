@@ -12,6 +12,22 @@ const fetchComment = async (id) => {
   return data;
 };
 
+const addNewComment = async (id, name, comment) => {
+  let response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LH4l4Y82QQgAWvpqUZUp/comments/', {
+    method: 'POST',
+    body: JSON.stringify({
+    item_id: id,
+    username: name,
+    comment: comment
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+console.log(await response.status)
+}
+// fetchid()
+
 const openModal = async (id) => {
   const shows = await fetchShow();
   const comments = await fetchComment(id);
@@ -47,7 +63,7 @@ const openModal = async (id) => {
       <form class="form-comment">
       <input type="text" name="name" class="username" placeholder="add your name">
       <textarea name="comment" id="" rows="5" placeholder="add your review"></textarea>
-      <button class="add-comment">submit comment</button>
+      <button type="submit" class="add-comment" id="${id}">submit comment</button>
       </form>
       </div>
 </div>
@@ -58,6 +74,19 @@ const openModal = async (id) => {
     modal.classList.toggle('hide');
     modal.innerHTML = '';
   });
+
+  const form = document.querySelector('form')
+  const addButton = document.querySelector('.add-comment')
+  form.addEventListener('submit', async (e) => {
+    let id = Number(addButton.id)
+    e.preventDefault()
+    let comment = form.comment.value
+    let user = form.name.value
+    await addNewComment(id, user, comment)
+    form.name.value = ''
+    form.comment.value = ''
+    await fetchComment()
+  })
 };
 
 export default openModal;
