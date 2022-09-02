@@ -18,6 +18,10 @@
 - [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
 - Github pages
 
+## Live Demo
+
+[Watch video !](https://drive.google.com/file/d/1TV6W07lS4zedpbGU_WjFpsNSohtWaP9g/view?usp=sharing)
+
 ## Website
 
 [> Coming soon !](https://mullenlucas.github.io/tv-series-showcase/dist/)
