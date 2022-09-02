@@ -30,7 +30,7 @@
 
 ## Website
 
-[> Coming soon !](https://mullenlucas.github.io/tv-series-showcase/dist/)
+[Live Demo!](https://mullenlucas.github.io/tv-series-showcase/dist/)
 
 ## Information
 
