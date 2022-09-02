@@ -1,8 +1,6 @@
-const itemCounter = (ori, arr) => {
-  ori.splice(141).forEach((el) => {
-    arr.push(el);
-  });
-  return arr.length;
+const itemCounter = (arr) => {
+  const items = arr.length;
+  return items;
 };
 
 export default itemCounter;

@@ -26,12 +26,12 @@ header nav ul {
 }
 
 #img-logo {
-  background-image: url(./imgs/as-logo.png);
+  background-image: url(./imgs/logo.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 60px;
-  width: 60px;
+  width: 120px;
 }
 
 footer {
