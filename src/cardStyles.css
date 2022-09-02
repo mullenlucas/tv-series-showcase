@@ -3,7 +3,7 @@
 :root {
   --font-poppins: 'Poppins', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
-  --cards-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  --cards-shadow: rgba(0, 0, 0, 0.09) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
 }
 
 header {
@@ -26,10 +26,10 @@ header {
 }
 
 .card {
-  background-color:rgba(182, 182, 182, 0.1);
+  background-color: rgba(182, 182, 182, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 0 1px 0;
   padding: 6px;
   display: flex;
   flex-direction: column;
@@ -58,26 +58,28 @@ header {
 }
 
 .comment-btn {
-    padding: 6px 12px;
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: black;
-    border-radius: 6px;
-    display: block;
-    border: 0px;
-    font-family: var(--font-poppins);
-    font-weight: 600;
-    box-shadow: 0px 0px 14px -7px #f09819;
-    background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
-    cursor: pointer;
-    user-select: none;
-    /* -webkit-user-select: none; */
-    touch-action: manipulation;
+  padding: 6px 12px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+  border-radius: 6px;
+  display: block;
+  border: 0;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  box-shadow: 0 0 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #ff512f 0%, #f09819  51%, #ff512f  100%);
+  cursor: pointer;
+  user-select: none;
+
+  /* -webkit-user-select: none; */
+  touch-action: manipulation;
 }
-  
+
 .comment-btn:hover {
   background-position: right center;
+
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
