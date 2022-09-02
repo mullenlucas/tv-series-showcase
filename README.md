@@ -22,6 +22,10 @@
 
 [Watch video !](https://drive.google.com/file/d/1TV6W07lS4zedpbGU_WjFpsNSohtWaP9g/view?usp=sharing)
 
+![desktop-ver](https://user-images.githubusercontent.com/69157785/188171378-dc9953f7-87af-4ed4-a8f6-18f8dfc203ff.png)
+<br>
+![moblie-ver](https://user-images.githubusercontent.com/69157785/188171438-aa8e2e89-9af8-472f-8f5d-554fe9586d6f.png)
+
 ## Website
 
 [> Coming soon !](https://mullenlucas.github.io/tv-series-showcase/dist/)
