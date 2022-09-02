@@ -77,12 +77,26 @@ header {
 }
   
 .comment-btn:hover {
-    background-position: right center;
-    /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.comment-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) and (min-width: 485px) {
+  .main-sec {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(50, 1fr);
   }
-  
-  .comment-btn:active {
-    transform: scale(0.95);
+}
+
+@media (max-width: 484px) {
+  .main-sec {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(99, 1fr);
   }
+}
