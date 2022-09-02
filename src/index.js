@@ -1,10 +1,7 @@
-import './style.css';
-import './popup.css';
-import './cardStyles.css';
-import './comment.css';
+import './css/style.css';
 import Series from './modules/Series.js';
-import createCard from './cards.js';
-import openModal, { addNewComment, fetchComment } from './popup.js';
+import createCard from './modules/cards.js';
+import openModal, { addNewComment, fetchComment } from './modules/popup.js';
 
 // Initialize Series Class
 const seriesCl = new Series();
@@ -15,7 +12,6 @@ let dat;
 const fetchShows = async () => {
   const response = await fetch(baseUrl);
   const data = await response.json();
-
   dat = data;
 };
 
@@ -32,14 +28,6 @@ const populateShows = async () => {
   atvs.innerText = `Awesome TV-Series(${seriesCl.allSeries.length})`;
 };
 populateShows();
-
-// const fetchid = async () => {
-//   let response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
-//     method: 'POST',
-//   })
-//   console.log(response)
-// };
-// fetchid()
 
 const displayPop = async () => {
   await fetchShows();
