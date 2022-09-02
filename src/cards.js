@@ -75,13 +75,19 @@ const createCard = (id, txt, imgsrc) => {
   numLikes.setAttribute('id', `numlike${id}`);
 
   updateLikes(id);
-  heartIcon.addEventListener('click', () => {
-    heartIcon.setAttribute('class', 'fa-solid fa-heart');
-    giveLike(id);
-    const getN = numLikes.innerText;
-    const thenum = getN.match(/\d+/)[0];
-    numLikes.innerText = `${Number(thenum) + 1} likes`;
-  });
+  if (heartIcon.classList.contains('far')) {
+    heartIcon.addEventListener('click', () => {
+      const newHeart = document.createElement('i');
+      newHeart.setAttribute('id', `like${id}`);
+      newHeart.setAttribute('class', 'fa-solid fa-heart');
+      heartIcon.parentNode.replaceChild(newHeart, heartIcon);
+      giveLike(id);
+      const getN = numLikes.innerText;
+      const thenum = getN.match(/\d+/)[0];
+      numLikes.innerText = `${Number(thenum) + 1} likes`;
+    });
+  }
+
   likesDiv.appendChild(numLikes);
   cardDiv.appendChild(likesDiv);
   const commentBtn = document.createElement('button');
