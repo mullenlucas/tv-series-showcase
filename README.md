@@ -18,10 +18,7 @@
 - [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
 - Github pages
 
-## Live Demo
-
-[Watch video !](https://drive.google.com/file/d/1TV6W07lS4zedpbGU_WjFpsNSohtWaP9g/view?usp=sharing)
-
+## Website Screenshots (Desktop & Mobile)
 ### Desktop version:
 ![desktop-ver](https://user-images.githubusercontent.com/69157785/188171378-dc9953f7-87af-4ed4-a8f6-18f8dfc203ff.png)
 <br>
